@@ -18,6 +18,7 @@ module.exports = {
       }),
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
+        mistery: ["Mystery Quest", "cursive"],
       },
       content: {
         example: "url('../assets/brush.png')",
@@ -42,6 +43,9 @@ module.exports = {
       },
       gridTemplateColumns: {
         auto: "repeat(auto-fill,minmax(18rem,1fr))",
+      },
+      borderRadius: {
+        "3xl": "42px",
       },
     },
     screens: {
