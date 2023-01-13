@@ -13,7 +13,3 @@ h1 {
   @apply text-headline;
   @apply font-mistery;
 }
-
-p { 
-  @apply text-parragraf;
-}
