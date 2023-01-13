@@ -14,7 +14,7 @@ export const Hero = () => {
           </p>
           <label className="relative w-3/4 mt-1">
             <input
-              className="rounded-full placeholder:text-black text-xs outline-none py-2 pl-3 w-full"
+              className="rounded-full placeholder:text-black placeholder:font-semibold text-xs outline-none py-2 pl-3 w-full"
               placeholder="Search"
               type="text"
             />

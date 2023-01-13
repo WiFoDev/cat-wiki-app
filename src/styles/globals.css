@@ -6,7 +6,7 @@ html,
 body
 {
   @apply h-full;
-  @apply font-poppins;
+  @apply font-montserrat;
 }
 
 h1 {

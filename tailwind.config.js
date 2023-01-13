@@ -17,7 +17,7 @@ module.exports = {
           "linear-gradient(81.66deg, #ff8906 7.21%, #f25f4c 45.05%, #e53170 78.07%)",
       }),
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
         mistery: ["Mystery Quest", "cursive"],
       },
       content: {
