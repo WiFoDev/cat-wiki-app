@@ -1,12 +1,13 @@
 import type {NextPage} from "next";
 
-import {Hero, MostSearch} from "@/components";
+import {Advantages, Hero, MostSearch} from "@/components";
 
 const Home: NextPage = () => {
   return (
     <>
       <Hero />
       <MostSearch />
+      <Advantages />
     </>
   );
 };

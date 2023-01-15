@@ -9,7 +9,7 @@ module.exports = {
         parragraf: "#a7a9be",
         "button-text": "#fffffe",
         primary: "#E3E1DC",
-        secondary: "#f25f4c",
+        secondary: "#291507",
         tertiary: "#e53170",
       },
       backgroundImage: (theme) => ({
@@ -46,6 +46,9 @@ module.exports = {
       },
       borderRadius: {
         "3xl": "42px",
+      },
+      fontSize: {
+        "4xl": ["2.5rem", "3rem"],
       },
     },
     screens: {
