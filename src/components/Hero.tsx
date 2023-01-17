@@ -19,12 +19,12 @@ export const Hero = () => {
             <p className="text-white text-[10px]">
               Get to know more about your cat breed
             </p>
-            <label
-              className="relative w-3/4 mt-1"
+            <Input
+              fullSize={false}
+              textSize="text-xs"
+              width="w-[80%]"
               onClick={() => setIsModalOpen(true)}
-            >
-              <Input />
-            </label>
+            />
           </div>
           <div className="absolute inset-0 -z-10">
             <div className="">
