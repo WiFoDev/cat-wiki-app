@@ -1,14 +1,23 @@
-import React from "react";
+import React, {Dispatch, FC, SetStateAction} from "react";
 
 import {Portal} from "@/HOC/Portal";
 
 import {Input} from "./UI";
 
-export const SearchModal = () => {
+interface SearchModalProps {
+  setIsModalOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+export const SearchModal: FC<SearchModalProps> = ({
+  setIsModalOpen,
+}) => {
   return (
     <Portal>
       <div className="fixed inset-0 bg-white z-10 flex flex-col p-4 gap-7">
-        <div className="w-10 h-10 bg-primary grid place-items-center p-3 rounded-md place-self-end">
+        <div
+          className="w-10 h-10 bg-primary grid place-items-center p-3 rounded-md place-self-end"
+          onClick={() => setIsModalOpen(false)}
+        >
           <svg
             viewBox="0 0 320 512"
             xmlns="http://www.w3.org/2000/svg"
@@ -17,6 +26,44 @@ export const SearchModal = () => {
           </svg>
         </div>
         <Input />
+        <ul className="text-lg font-semibold overflow-scroll">
+          <li className="px-2 py-3 rounded-lg hover:bg-primary">
+            American Bobtail
+          </li>
+          <li className="px-2 py-3 rounded-lg hover:bg-primary">
+            American Bobtail
+          </li>
+          <li className="px-2 py-3 rounded-lg hover:bg-primary">
+            American Bobtail
+          </li>
+          <li className="px-2 py-3 rounded-lg hover:bg-primary">
+            American Bobtail
+          </li>
+          <li className="px-2 py-3 rounded-lg hover:bg-primary">
+            American Bobtail
+          </li>
+          <li className="px-2 py-3 rounded-lg hover:bg-primary">
+            American Bobtail
+          </li>
+          <li className="px-2 py-3 rounded-lg hover:bg-primary">
+            American Bobtail
+          </li>
+          <li className="px-2 py-3 rounded-lg hover:bg-primary">
+            American Bobtail
+          </li>
+          <li className="px-2 py-3 rounded-lg hover:bg-primary">
+            American Bobtail
+          </li>
+          <li className="px-2 py-3 rounded-lg hover:bg-primary">
+            American Bobtail
+          </li>
+          <li className="px-2 py-3 rounded-lg hover:bg-primary">
+            American Bobtail
+          </li>
+          <li className="px-2 py-3 rounded-lg hover:bg-primary">
+            American Bobtail
+          </li>
+        </ul>
       </div>
     </Portal>
   );

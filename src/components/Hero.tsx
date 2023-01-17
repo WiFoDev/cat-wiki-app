@@ -11,7 +11,7 @@ export const Hero = () => {
 
   return (
     <>
-      {isModalOpen && <SearchModal />}
+      {isModalOpen && <SearchModal setIsModalOpen={setIsModalOpen} />}
       <section>
         <div className="relative overflow-hidden rounded-t-3xl">
           <div className="px-6 py-5 flex flex-col gap-2 w-1/2">
