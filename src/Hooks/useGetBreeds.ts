@@ -2,7 +2,7 @@ import {useQuery} from "@tanstack/react-query";
 
 import {getBreeds} from "@/querys";
 
-interface Breed {
+export interface Breed {
   id: string;
   name: string;
 }

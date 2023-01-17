@@ -1,5 +1,5 @@
 import Image from "next/image";
-import {FC} from "react";
+import {Dispatch, FC, SetStateAction} from "react";
 
 import searchIcon from "@/Assets/search.svg";
 
@@ -8,6 +8,8 @@ interface InputProps {
   width?: string;
   textSize?: string;
   fullSize?: boolean;
+  value: string;
+  setValue: Dispatch<SetStateAction<string>>;
 }
 
 export const Input: FC<InputProps> = ({
@@ -15,6 +17,8 @@ export const Input: FC<InputProps> = ({
   width,
   textSize,
   fullSize = true,
+  value,
+  setValue,
 }) => {
   return (
     <label
@@ -27,6 +31,8 @@ export const Input: FC<InputProps> = ({
         className="rounded-full placeholder:text-black outline-none py-2 pl-4 w-full border-[1px] border-background"
         placeholder="Search"
         type="text"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
       />
       <div
         className={`absolute ${
