@@ -5,6 +5,7 @@ import {getBreeds} from "@/querys";
 export interface Breed {
   id: string;
   name: string;
+  affection_level: number;
 }
 
 export const useGetBreeds = () => {
@@ -13,9 +14,10 @@ export const useGetBreeds = () => {
     queryFn: getBreeds,
     staleTime: 1000 * 60 * 60 * 24,
     select: (data) =>
-      data.map((breed: Breed) => ({
-        id: breed.id,
-        name: breed.name,
+      data.map(({id, name, affection_level}: Breed) => ({
+        id,
+        name,
+        affection_level,
       })),
   });
 

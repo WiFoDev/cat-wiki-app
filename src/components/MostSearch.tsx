@@ -1,9 +1,23 @@
-import React from "react";
+import React, {useMemo} from "react";
 import Image from "next/image";
 
-import catImage from "@/Assets/image 1.png";
+import {useGetBreeds} from "@/Hooks/useGetBreeds";
+
+import {MostSearchItem} from "./MostSearchItem";
 
 export const MostSearch = () => {
+  const {data} = useGetBreeds();
+
+  const fourMostSearched = useMemo(() => {
+    if (data) {
+      const draft = [...data];
+
+      draft.sort((a, b) => b.affection_level - a.affection_level);
+
+      return draft.slice(0, 4);
+    }
+  }, [data]);
+
   return (
     <section className="bg-primary px-7 py-4 flex flex-col gap-4 rounded-b-3xl">
       <div>
@@ -13,24 +27,12 @@ export const MostSearch = () => {
       <h2 className="text-lg font-bold w-2/3">
         66+ Breeds For you to discover
       </h2>
-      <div className="grid grid-cols-2 gap-5 mt-2 mb-4">
-        <div className="flex flex-col gap-2.5">
-          <Image alt="a cat image" src={catImage} />
-          <h2 className="text-xs font-semibold">Bengal</h2>
-        </div>
-        <div className="flex flex-col gap-2.5">
-          <Image alt="a cat image" src={catImage} />
-          <h2 className="text-xs font-semibold">Bengal</h2>
-        </div>
-        <div className="flex flex-col gap-2.5">
-          <Image alt="a cat image" src={catImage} />
-          <h2 className="text-xs font-semibold">Bengal</h2>
-        </div>
-        <div className="flex flex-col gap-2.5">
-          <Image alt="a cat image" src={catImage} />
-          <h2 className="text-xs font-semibold">Bengal</h2>
-        </div>
-      </div>
+      <ul className="grid grid-cols-2 gap-5 mt-2 mb-4">
+        {fourMostSearched &&
+          fourMostSearched.map((breed) => (
+            <MostSearchItem key={breed.id} {...breed} />
+          ))}
+      </ul>
     </section>
   );
 };
