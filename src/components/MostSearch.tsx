@@ -1,5 +1,4 @@
 import React, {useMemo} from "react";
-import Image from "next/image";
 
 import {useGetBreeds} from "@/Hooks/useGetBreeds";
 
